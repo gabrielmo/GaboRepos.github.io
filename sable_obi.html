@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sable Obi Wan</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- Setup import map for Three.js -->
+    <script async src="https://ga.jspm.io/npm:es-module-shims@1.7.1/dist/es-module-shims.js"></script>
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@^0.160.0/build/three.module.min.js"
+        }
+    }
+    </script>
+
+    <!-- Import model-viewer module version and model-viewer-effects addon -->
+    <script type="module"
+        src="https://cdn.jsdelivr.net/npm/@google/model-viewer/dist/model-viewer-module.min.js"></script>
+    <script type="module"
+        src="https://cdn.jsdelivr.net/npm/@google/model-viewer-effects/dist/model-viewer-effects.min.js"></script>
+
+
+    <!-- agrega el model viewer con un id para ser reconocido por el javascript-->
+    <model-viewer id="sable_obi_wan" camera-orbit="45deg 115deg auto" camera-controls touch-action="pan-y" autoplay
+        src="Modelos/sable_obi_wan.glb" ar alt="A 3D model of a Rocket Ship">
+         <!-- con las importaciones de arriba y el effect composer se puede activar el bloom-->
+        <effect-composer id="selectiveComposer" render-mode="quality">
+            <selective-bloom-effect strength="1" radius="0.9" threshold="0"></selective-bloom-effect>
+
+        </effect-composer>
+    </model-viewer>
+     
+    <script type="module">
+        //busca el elemento html con id selective Composer y activa el bloom
+        const selectiveComposer = document.querySelector("effect-composer#selectiveComposer");
+        const selectiveBloom = selectiveComposer.querySelector("selective-bloom-effect");
+
+        selectiveComposer.addEventListener('updated-selection', () => {
+            const selection = [];
+            selectiveComposer.selection.forEach((obj) =>
+                (obj.material.emissive.r > 0
+                    || obj.material.emissive.g > 0
+                    || obj.material.emissive.b > 0) &&
+                selection.push(obj)
+            );
+            selectiveBloom.selection = selection;
+
+        });
+        // busca el model viewer con el id sable_obi_wan y les da un color y activa el metallic y el rougness
+        const modelViewerParameters = document.querySelector("model-viewer#sable_obi_wan");
+
+        modelViewerParameters.addEventListener("load", (ev) => {
+
+            let material = modelViewerParameters.model.materials[3];//dorado
+            let material_1 = modelViewerParameters.model.materials[1];//plateado
+            let material_2 = modelViewerParameters.model.materials[4];//naranja
+            let material_3 = modelViewerParameters.model.materials[5];//azul 
+
+
+
+
+            // set materials
+            material.pbrMetallicRoughness.setBaseColorFactor([0.7294, 0.5333, 0.0392]);
+            material_1.pbrMetallicRoughness.setBaseColorFactor([0.5294, 0.5294, 0.5294]);
+            material_2.pbrMetallicRoughness.setBaseColorFactor([1, 0.3961, 0.1412]);
+
+
+            material.pbrMetallicRoughness.setMetallicFactor(0.5);
+            material.pbrMetallicRoughness.setRoughnessFactor(0);
+
+            material_1.pbrMetallicRoughness.setMetallicFactor(0.5);
+            material_1.pbrMetallicRoughness.setRoughnessFactor(0);
+
+            material_2.pbrMetallicRoughness.setMetallicFactor(0.5);
+            material_2.pbrMetallicRoughness.setRoughnessFactor(0);
+
+            material_1.pbrMetallicRoughness.setEmissiveFactor(0, 0, 0);
+
+
+
+
+
+        })
+
+    </script>
+
+
+
+</body>
+
+</html>
