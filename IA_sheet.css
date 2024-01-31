@@ -1,0 +1,102 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f8f8f8;
+    color: #333;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  header {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 40px 0;
+  }
+  
+  header h1 {
+    font-size: 2.5em;
+    margin: 0;
+  }
+  
+  header p {
+    font-size: 1.2em;
+    
+  }
+  
+  section {
+    margin: 40px 0;
+  }
+  
+  #link_app{
+    margin-bottom: 30px;
+    margin-right: 10px;
+  }
+
+  
+  #app_artest_img{
+    max-width: 25%;
+    height: auto; /* Mantiene la proporción original de la imagen */
+    margin-left: 40px;
+  }
+
+  
+  
+  #mariposa {
+    max-width: 70%;
+    height: auto;
+  }
+
+  section h2 {
+    color: #222;
+  }
+  
+  iframe {
+    width: 100%;
+    height: 600px;
+    border: 1px solid #ccc;
+    margin-bottom: 30px;
+  }
+  
+  footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    position: relative;
+    clear: both;
+  }
+  
+  footer p {
+    margin: 0;
+  }
+  
+  /* Media queries para hacer el diseño más responsive */
+  
+  @media screen and (max-width: 600px) {
+    header h1 {
+      font-size: 2em;
+    }
+  
+    header p {
+      font-size: 1em;
+    }
+  
+    section h2 {
+      font-size: 1.5em;
+    }
+  
+    iframe {
+      height: 400px;
+    }
+  }
+  
+  
+  

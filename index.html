@@ -1,35 +1,67 @@
 <!DOCTYPE html>
-<html lang="es">
-<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
-
+<html lang="en">
 <head>
-
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="" />
-
-
-  <title>Modelo GABO</title>
-
-  <!-- The website stylesheet -->
-  <link rel="stylesheet" href="style.css" />
-
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="IA_sheet.css">
+    <title>Gabriel Montaño - Portafolio</title>
 </head>
-
 <body>
-  <div>
-    <model-viewer id="model_viewer" src="Modelos/casa_watterson.glb" 
-    ar ar-modes="scene-viewer webxr quick-look" 
-    camera-controls
-    shadow-intensity="1">
-      <div class="progress-bar hide" slot="progress-bar">
-        <div class="update-bar"></div>
-      </div>
-      <button slot="ar-button" id="ar-button">View in your space</button>
 
-    </model-viewer>
-  </div>
+  <header>
+    <div class="container">
+      <h1>Gabriel Montaño</h1>
+      <p>Desarrollador de videojuegos</p>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="container">
+      <h2>Sobre mí</h2>
+      <p>Soy un Desarrollador de videojuegos graduado del SENA con conocimientos en C#, javascript, HTML, Blender, Unity, Unreal Engine  </p>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <h2>Proyectos</h2>
+      <h3>Artest Ar</h3>
+      <p>Artest Ar que consiste en poder visualizar objetos a través de la cámara de profundidad en Android sin necesidad de Ar core de google Aqui el link para probarla:</p>
+      <a id="link_app" href="https://play.google.com/store/apps/details?id=com.ArTest.ArtestAr">Artest app</a>
+    </div>
+    <div class="container">
+      <img id="app_artest_img"src="Imagenes/artest_app.jpeg" alt="">
+      <img id="app_artest_img" src="Imagenes/Mariposa_ar.jpeg" alt="">
+      <p>Si ya tienen descargada el app y desean ver la mariposa aquí les dejo la imagen</p>
+      <img  id="mariposa" src="Imagenes/Mariposa.jpeg" alt="">  
+
+    </div>
+  </section>
+
+  <section id="embeddedPage">
+    <div class="container">
+      <h2>Modelos 3d</h2>
+      <!-- Usa la etiqueta iframe para incrustar otra página -->
+      <iframe src="https://gabrielmo.github.io/GaboRepos.github.io/sable_obi" width="100%" height="600px" frameborder="0"></iframe>
+      <iframe src="https://gabrielmo.github.io/GaboRepos.github.io/casa_watterson" width="100%" height="600px" frameborder="0"></iframe>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Contacto</h2>
+      <p>¡Contáctame para colaboraciones y oportunidades!</p>
+      <p>+57 3005759851</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Gabriel Montaño. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
 </body>
+</html>
 
 </html>
